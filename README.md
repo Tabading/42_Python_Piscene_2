@@ -47,6 +47,61 @@ Pandas is a Python library used for working with data sets. \
 It has functions for analyzing, cleaning, exploring, and manipulating data.
 
 ### Ex01
+Manipulate a Pandas data set for specific values and display them as a grap with matplotlib.
+
+#### Code explanation:
+ger = dataframe[dataframe['country'] == "Germany"].iloc[0]: \
+- dataframe[dataframe['country'] == "Germany"]: find the row with index Germany
+- iloc[0]: converts that row into a Series.
+- contains indexed values
+
+years = ger.index[1:].astype(int)
+- take all indexes starting at position 1 as ints
+- contains the indexes AS values
+
+life_expectancy = ger.iloc[1:].astype(float)
+- take ger starting at postion 1 as floats
+- contains indexed values 
+
+plt.plot(years, life_expectancy, label="Germany")
+- basic form is: plt.plot(x, y, format_string, **kwargs)
+- x: x axis 
+- y: y axis
+    - they get paired togeter to form points (x, y) and connected by a line
+- label: gives the line a name 
+    - displayed with plt.legend()
+- format_string: these can be combined together like so "ro--"
+    - color: changes line color, 
+        - "r" red
+        - "g" green
+        - "b" blue
+        - "c" cyan
+        - "m" magenta
+        - "y" yellow
+        - "k" black
+        - "w" white
+    - linestyle: changes the line
+        - "-"  solid
+        - "--" dashed
+        - ":"  dotted
+        - "-." dash-dot
+    - linewidth / lw: 
+    - marker: markes coordinate on line
+        - "o" circle
+        - "." point
+        - "s" square
+        - "^" triangle up
+        - "v" triangle down
+        - "*" star
+        - "+" plus
+        - "x" x
+        - "D" diamond
+- markersize / ms
+- markerfacecolor: inside of marker
+- markeredgecolor / mec : outline of marker
+- markeredgewidth / mew: width of marker outline
+- alpha: transparency
+
 
 ### Ex02
 
@@ -62,6 +117,7 @@ Create a Venv with all required libs, unless you want to install them  globaly.
 - python3 -m venv venv
 - source venv/bin/activate
 - pip install pandas
+- pip install matplotlib
 - pip install flake8
 - deactivate (to exit)
 
@@ -76,8 +132,12 @@ Create a Venv with all required libs, unless you want to install them  globaly.
 
 # Resources
 ex00:
+- https://www.w3schools.com/python/pandas/pandas_dataframes.asp
 
 ex01:
+- https://matplotlib.org/stable/tutorials/pyplot.html
+-https://github.com/pandas-dev/pandas/blob/v3.0.5/pandas/plotting/_core.py#L772-L2154
+- KI to help understand plt.plot
 
 ex02:
 
