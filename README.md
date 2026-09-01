@@ -41,6 +41,7 @@ that you were asked to test.
 ## Mandetory Modules
 
 ### Ex00
+Learn to load and print a Dataset from a .csv file.
 
 #### Pandas
 Pandas is a Python library used for working with data sets. \
@@ -104,6 +105,7 @@ plt.plot(years, life_expectancy, label="Germany")
 
 
 ### Ex02
+Format the Matplotlib plot/Graph to specifications.
 
 ### Ex03
 
@@ -136,10 +138,14 @@ ex00:
 
 ex01:
 - https://matplotlib.org/stable/tutorials/pyplot.html
--https://github.com/pandas-dev/pandas/blob/v3.0.5/pandas/plotting/_core.py#L772-L2154
+- https://github.com/pandas-dev/pandas/blob/v3.0.5/pandas/plotting/_core.py#L772-L2154
+- https://www.w3schools.com/python/pandas/pandas_plotting.asp
 - KI to help understand plt.plot
 
 ex02:
+- https://matplotlib.org/stable/users/explain/axes/axes_ticks.html
+- https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xticks.html#matplotlib.axes.Axes.set_xticks
+- https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html
 
 ex03:
 
