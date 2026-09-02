@@ -117,6 +117,7 @@ Create a Venv with all required libs, unless you want to install them  globaly.
 
 - python3 -m venv venv
 - source venv/bin/activate
+- pip install numpy
 - pip install pandas
 - pip install matplotlib
 - pip install flake8
