@@ -108,8 +108,7 @@ plt.plot(years, life_expectancy, label="Germany")
 Format the Matplotlib plot/Graph to specifications.
 
 ### Ex03
-
-
+Learn to manipulate the scale and ticks of a graph, with matplotlib.
 
 # Instructions
 
@@ -148,11 +147,9 @@ ex02:
 - https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html
 
 ex03:
-
-ex04:
-
-ex05:
-
+- https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_with_legend.html
+- https://matplotlib.org/stable/gallery/scales/scales.html
+- https://matplotlib.org/stable/gallery/ticks/tick-locators.html
 
 ### KI Usage
 KI was generally used to save time searching for specific functions, explaining specifics, figuring out what what i'm trying to do is called and finding shorter solutions, ie. how MY code could be reformated to be shorter/less lines for learning purposes.
