@@ -12,19 +12,43 @@ def remove_dates(data: pd.DataFrame):
             data.drop(index=i, inplace=True)
 
 
+# def plot_countrys(country: str, other: str):
+#     '''Load the .csv, get the data for 2 given Indexes, and plot them.'''
+#     df = load("population_total.csv")
+
+#     c1 = df[df['country'] == country].iloc[0]
+#     c1 = c1.replace({'M': '', 'K': ''}, regex=True)
+#     c1_total = c1.iloc[1:].astype(float)
+#     remove_dates(c1_total)
+#     c1_years = c1_total.index.astype(int)
+
+#     c2 = df[df['country'] == other].iloc[0]
+#     c2 = c2.replace({'M': '', 'K': ''}, regex=True)
+#     c2_total = c2.iloc[1:].astype(float)
+#     remove_dates(c2_total)
+#     c2_years = c2_total.index.astype(int)
+
+#     plt.plot(c1_years, c1_total, color="g", label=country)
+#     plt.plot(c2_years, c2_total, label=other)
+
+
 def plot_countrys(country: str, other: str):
     '''Load the .csv, get the data for 2 given Indexes, and plot them.'''
     df = load("population_total.csv")
+    mp = {'K': ' * 10**3', 'k': ' * 10**3', 'M': ' * 10**6', 'B': ' * 10**9',
+          't': ' * 10**12', 'q': ' * 10**15', 'Q': ' * 10**15'}
 
     c1 = df[df['country'] == country].iloc[0]
-    c1 = c1.replace({'M': '', 'K': ''}, regex=True)
-    c1_total = c1.iloc[1:].astype(float)
+    c1 = pd.eval(c1[1:].replace(mp.keys(), mp.values(), regex=True))
+    print(c1)
+    c1_total = pd.DataFrame(c1).iloc[:-1]
     remove_dates(c1_total)
+    print(c1_total)
     c1_years = c1_total.index.astype(int)
 
     c2 = df[df['country'] == other].iloc[0]
-    c2 = c2.replace({'M': '', 'K': ''}, regex=True)
-    c2_total = c2.iloc[1:].astype(float)
+    c2 = pd.eval(c2[1:].replace(mp.keys(), mp.values(), regex=True))
+    c2_total = pd.DataFrame(c2).iloc[:-1]
     remove_dates(c2_total)
     c2_years = c2_total.index.astype(int)
 
@@ -47,7 +71,7 @@ def format_plot():
 def main():
     try:
         plot_countrys("Germany", "France")
-        format_plot()
+        # format_plot()
         plt.show()
 
     except AssertionError as e:
